@@ -23,6 +23,18 @@ class Duck {
     }
 }
 
+class RubberDuck extends Duck {
+    constructor() {
+        super(new NoFly(),
+        new Squack(),
+        new FloatSwim());
+    }
+
+    display(): void {
+        console.log("just a rubber duck");
+    }
+}
+
 interface FlyStrategy {
     fly(): void;
 }
@@ -65,6 +77,12 @@ class RegularQuack implements QuackStrategy {
     }
 }
 
+class Squack implements QuackStrategy {
+    quack(): void {
+        console.log("squack");
+    }
+}
+
 class FloatSwim implements SwimStrategy {
     swim(): void {
         console.log("FloatSwim");
@@ -87,3 +105,11 @@ myDuck.display();
 myDuck.fly();
 myDuck.quack()
 myDuck.swim();
+
+let myRubberDuck: Duck = new RubberDuck();
+
+myRubberDuck.display();
+myRubberDuck.fly();
+myRubberDuck.quack()
+myRubberDuck.swim();
+
