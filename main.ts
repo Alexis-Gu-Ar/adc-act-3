@@ -49,7 +49,7 @@ interface SwimStrategy {
 
 class RegularFly implements FlyStrategy {
     fly(): void {
-        // console.log("RegularFly");
+        console.log("RegularFly");
     }
 }
 
